@@ -1,0 +1,16 @@
+{
+  "name": "2dge-ts",
+  "version": "0.0.0",
+  "description": "2D game engine for the web",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "tsc && http-server -g -o & tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "danielfoord",
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^14.1.0",
+    "typescript": "^4.6.2"
+  }
+}

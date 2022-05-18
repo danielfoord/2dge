@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <title>2dge-ts</title>
+    <style>
+      
+      html {
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+      }
+      
+      body {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+      }
+
+    </style>
+  </head>
+  <body onload="doGLDraw();">
+
+    <script type="x-shader/x-vertex" id="VertexShader">
+      attribute vec3 aSquareVertexPosition;
+
+      void main(void) {
+        gl_Position = vec4(aSquareVertexPosition, 1.0);
+      }
+    </script>
+
+    <script type="x-shader/x-fragment" id="FragmentShader">
+      void main(void) {
+        gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+      }
+    </script>
+
+    
+    <canvas id="GLCanvas" width="640" height="480"></canvas>
+    <script type="text/javascript" src="dist/WebGL.js"></script>
+    <script type="text/javascript" src="dist/VertexBuffer.js"></script>
+    <script type="text/javascript" src="dist/ShaderSupport.js"></script>
+  </body>
+</html>
