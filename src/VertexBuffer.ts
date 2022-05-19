@@ -3,7 +3,6 @@
 let gSquareVertextBuffer: WebGLBuffer = null;
 
 const initSquareBuffer = (): void => {
-
   const verticiesOfSquare = [
     0.5, 0.5, 0.0,
     -0.5, 0.5, 0.0,
@@ -11,10 +10,10 @@ const initSquareBuffer = (): void => {
     -0.5, -0.5, 0.0
   ];
 
-  gSquareVertextBuffer = gGL.createBuffer();
+  gSquareVertextBuffer = Engine.Ctx.createBuffer();
 
-  gGL.bindBuffer(gGL.ARRAY_BUFFER, gSquareVertextBuffer);
+  Engine.Ctx.bindBuffer(Engine.Ctx.ARRAY_BUFFER, gSquareVertextBuffer);
 
-  gGL.bufferData(gGL.ARRAY_BUFFER, 
-    new Float32Array(verticiesOfSquare), gGL.STATIC_DRAW);
+  Engine.Ctx.bufferData(Engine.Ctx.ARRAY_BUFFER, 
+    new Float32Array(verticiesOfSquare), Engine.Ctx.STATIC_DRAW);
 };
