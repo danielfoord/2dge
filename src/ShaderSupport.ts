@@ -50,5 +50,10 @@ const initSimpleShader = (vertexShaderId: string, fragmentShaderId: string): voi
   gGL.bindBuffer(gGL.ARRAY_BUFFER, gSquareVertextBuffer);
 
   // Describe the characteristics of the vertex positions
-  // TODO: Implement
+  gGL.vertexAttribPointer(gShaderVertexPositionAttribute, 
+    3,
+    gGL.FLOAT,
+    false,
+    0,
+    0);
 };
