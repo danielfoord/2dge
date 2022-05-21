@@ -6,11 +6,9 @@ const clearCanvas = (): void => {
 
 const drawSquare = (): void => {
   Engine.Ctx.clear(Engine.Ctx.COLOR_BUFFER_BIT);
-
-  Engine.Ctx.useProgram(gSimpleShader);
-
-  Engine.Ctx.enableVertexAttribArray(gShaderVertexPositionAttribute);
-
+  const shader = new SimpleShader('VertexShader', 'FragmentShader');
+  shader.initialize();
+  shader.activate();
   Engine.Ctx.drawArrays(Engine.Ctx.TRIANGLE_STRIP, 0, 4);
 };
 
