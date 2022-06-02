@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-      "target": "es5",
+      "target": "ES2015",
       "sourceMap": true,
       "outFile": "./dist/2dge.js",
       "sourceRoot": "./src/",

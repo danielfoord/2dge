@@ -3,7 +3,12 @@
   <head>
     <title>2dge-ts</title>
     <style>
-      
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      } 
+
       html {
         width: 100vw;
         height: 100vh;
@@ -12,6 +17,7 @@
       }
       
       body {
+        background: #000;
         display: flex;
         padding: 0;
         margin: 0;
@@ -23,25 +29,9 @@
 
     </style>
   </head>
-  <body onload="doGLDraw();">
-
-    <script type="x-shader/x-vertex" id="VertexShader">
-      attribute vec3 aSquareVertexPosition;
-
-      void main(void) {
-        gl_Position = vec4(aSquareVertexPosition, 1.0);
-      }
-    </script>
-
-    <script type="x-shader/x-fragment" id="FragmentShader">
-      void main(void) {
-        gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
-      }
-    </script>
-
-    
+  <body onload="new MyGame().initialize('GLCanvas');">   
     <canvas id="GLCanvas" width="640" height="480"></canvas>
-    
+
     <script type="text/javascript" src="dist/2dge.js"></script>
   </body>
 </html>
