@@ -9,7 +9,7 @@ class Engine {
       console.debug('Initializing WebGL context...');
       const canvas: HTMLCanvasElement = document.getElementById(this.canvasId) as HTMLCanvasElement; 
       this.ctx = canvas.getContext('webgl') || canvas.getContext('experimental-webgl') as WebGLRenderingContext;
-      console.debug('WebGL context initialized');
+      console.debug('%cWebGL context initialized', 'color: #00ff2f');
     }
     return this.ctx;
   }

@@ -7,7 +7,7 @@ class SimpleShader {
   public constructor(
     private vertexShaderId: string,
     private fragmentShaderId: string,
-    private pixelColor: number[]) { }
+    public pixelColor: number[] = [1, 1, 1, 1]) { }
 
   public async initialize(): Promise<void> {
     // Load and compile the vertex and fragment shaders
@@ -52,8 +52,10 @@ class SimpleShader {
   private async loadAndCompile(filePath: string, shaderType: number): Promise<WebGLShader> {
     let compiledShader: WebGLShader = null;
 
+    console.debug(`%cFetching %c${filePath}...`, 'color: cyan', 'color: cyan; font-style: italic');
     const res = await fetch(filePath);
     const shaderSource = await res.text();
+    console.debug(`%cGot source for %c${filePath}`, 'color: cyan', 'color: cyan; font-style: italic');
 
     // Instantiate shader
     compiledShader = Engine.Ctx.createShader(shaderType);
